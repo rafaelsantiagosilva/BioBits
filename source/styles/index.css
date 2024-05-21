@@ -1,0 +1,36 @@
+@charset "UTF-8";
+@import url(./style.css);
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+figcaption {
+    font-size: 2rem;
+    color: var(--cor_primaria);
+    font-weight: 600;
+    padding: 15px;
+}
+
+@keyframes animacao_splash {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+#splash_logo {
+    animation: animacao_splash 2.5s normal ease-in-out;
+}

@@ -1,0 +1,16 @@
+{
+    "name": "biobits",
+    "version": "1.0.0",
+    "description": "- Logo: [https://www.flaticon.com/br/icones-gratis/biologia](https://www.flaticon.com/br/icones-gratis/biologia)",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --write"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "prettier": "^3.2.5"
+    }
+}
