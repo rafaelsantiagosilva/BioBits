@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 1.3rem 3rem;
-    box-shadow: 3px 3px 18px 1px rgba(0, 0, 0, 0.482);
+    box-shadow: 3px 3px 18px 1px rgba(0, 0, 0, 0.307);
 }
 
 .header_principal > .logo > img {
@@ -72,7 +72,7 @@ nav.links a:hover {
     width: 80%;
 }
 
-.conteudo > section > p{
+.conteudo > section > p {
     text-align: justify;
     font-size: 1.5rem;
     text-indent: 2em;
@@ -93,6 +93,7 @@ nav.links a:hover {
     color: #fff;
     font-size: 2rem;
     font-weight: 800;
+    box-shadow: -6px 3px 18px 1px rgba(0, 0, 0, 0.362);
 }
 
 .footer_principal > img {
@@ -106,9 +107,11 @@ nav.links a:hover {
         justify-content: center;
         align-items: center;
         text-align: center;
+        z-index: 5;
+        box-shadow: none;
     }
 
-    .header_principal > .logo > div.titulo{
+    .header_principal > .logo > div.titulo {
         font-size: 3rem;
     }
 
@@ -119,6 +122,8 @@ nav.links a:hover {
     .links {
         padding: 0.5rem 1rem;
         background-color: var(--cor_secundaria_hover);
+        box-shadow: 0 3px 18px -1px rgba(0, 0, 0, 0.482);
+        z-index: -1;
     }
 
     nav.links a {
