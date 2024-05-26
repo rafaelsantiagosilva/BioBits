@@ -56,19 +56,19 @@ class CabecalhoPrincipal extends HTMLElement {
         const itemJogar = document.createElement('li');
         const linkJogar = document.createElement('a');
         linkJogar.innerText = 'Jogar';
-        linkJogar.href = this.getAttribute('urljogar') || '#';
+        linkJogar.href = './jogar.html';
         itemJogar.appendChild(linkJogar);
 
         const itemSobre = document.createElement('li');
         const linkSobre = document.createElement('a');
         linkSobre.innerText = 'Sobre';
-        linkSobre.href = this.getAttribute('urlsobre') || '#';
+        linkSobre.href = './sobre.html';
         itemSobre.appendChild(linkSobre);
 
         const itemAutores = document.createElement('li');
         const linkAutores = document.createElement('a');
         linkAutores.innerText = 'Autores';
-        linkAutores.href = this.getAttribute('urlautores') || '#';
+        linkAutores.href = './autores.html';
         itemAutores.appendChild(linkAutores);
 
         const linksNavbar = document.createElement('ul');
