@@ -12,38 +12,25 @@
             href="../../public/favicon.ico"
             type="image/x-icon"
         />
-        <title>BioBits</title>
+        <title>Biobits</title>
         <link rel="stylesheet" href="../styles/home.css" />
         <script
             type="text/javascript"
-            src="../scripts/javascript/main.js"
+            src="../scripts/javascript/components/CabecalhoPrincipal.js"
+            defer
+        ></script>
+        <script
+            type="text/javascript"
+            src="../scripts/javascript/components/RodapePrincipal.js"
             defer
         ></script>
     </head>
     <body>
-        <header class="header_principal">
-            <div class="logo">
-                <div class="titulo">BioBits</div>
-                <img
-                    src="../../public/favicon.ico"
-                    alt="Um átomo com uma folha no lugar do núcleo"
-                />
-            </div>
-            <nav class="links não_portrait">
-                <ul>
-                    <li><a href="#">Jogar</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Autores</a></li>
-                </ul>
-            </nav>
-        </header>
-        <nav class="links portrait">
-            <ul>
-                <li><a href="#">Jogar</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Autores</a></li>
-            </ul>
-        </nav>
+        <cabecalho-principal
+            urljogar="./jogar.html"
+            urlsobre="./sobre.html"
+            urlautores="./autores.html"
+        ></cabecalho-principal>
         <main class="conteudo">
             <h1 class="titulo_principal">Bem-vindo!</h1>
             <section>
@@ -98,16 +85,6 @@
                 </figure>
             </section>
         </main>
-        <footer class="footer_principal">
-            <img
-                src="../../public/favicon.ico"
-                alt="Um átomo com uma folha no lugar do núcleo"
-            />
-            2024
-            <img
-                src="../../public/favicon.ico"
-                alt="Um átomo com uma folha no lugar do núcleo"
-            />
-        </footer>
+        <rodape-principal></rodape-principal>
     </body>
 </html>

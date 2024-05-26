@@ -18,3 +18,27 @@
 .portrait {
     display: none;
 }
+
+.conteudo {
+    padding: 3rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+@media screen and (orientation: portrait) {
+    .nao_portrait {
+        display: none;
+    }
+
+    .portrait {
+        display: block;
+    }
+
+    .conteudo {
+        padding: 3rem 2rem;
+        gap: 8rem;
+    }
+}
