@@ -25,6 +25,11 @@
             src="../../scripts/javascript/components/RodapePrincipal.js"
             defer
         ></script>
+        <script
+            type="text/javascript"
+            src="../../scripts/javascript/quiz/4.js"
+            defer
+        ></script>
     </head>
     <body>
         <cabecalho-questao numeroquestao="4"></cabecalho-questao>
@@ -49,10 +54,18 @@
                     <img
                         src="../../../public/images/organelas-celulares.png"
                         alt=""
+                        usemap="#map_organela"
                     />
+                    <map name="map_organela">
+                        <area
+                            id="organela1"
+                            shape="poly"
+                            coords="81,134, 96,116, 115,115, 220,200, 132,127, 222,158, 133,157, 98,168, 97,167, 92,164, 87,161, 82,156, 84,153"
+                        />
+                    </map>
                 </div>
             </div>
-            <div class="botao_enviar">Enviar resposta</div>
+            <div class="botao_enviar" id="botao_enviar">Enviar resposta</div>
             <div class="aviso_resposta" id="aviso_resposta">
                 <span class="bi bi-check-circle"></span>
                 Você acertou completamente a pergunta! (1,0 ponto)

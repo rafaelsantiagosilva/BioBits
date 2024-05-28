@@ -15,6 +15,10 @@ ol#lista__ordem_organela > li {
      color: var(--cor_primaria);
 }
 
+area {
+     cursor: pointer;
+}
+
 @media screen and (orientation: portrait) {
      .organela {
           justify-content: center;
