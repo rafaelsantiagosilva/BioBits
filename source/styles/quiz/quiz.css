@@ -2,12 +2,12 @@
 @import url(../style.css);
 
 :root {
-    --cor_acertou_escura: rgb(9, 116, 9);
-    --cor_acertou_clara: rgb(207, 242, 207);
+    --cor_acertou_escura: #097409;
+    --cor_acertou_clara: #cff2cf;
     --cor_intermediario_escura: #be940b;
-    --cor_intermediario_clara: rgb(241, 236, 209);
-    --cor_errou_escura: rgb(136, 9, 9);
-    --cor_errou_clara: rgb(235, 198, 198);
+    --cor_intermediario_clara: #f1ecd1;
+    --cor_errou_escura: #880909;
+    --cor_errou_clara: #ebc6c6;
 }
 
 .enunciado {
