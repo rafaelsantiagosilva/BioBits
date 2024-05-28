@@ -4,6 +4,8 @@
 .enunciado {
      font-size: 2rem;
      font-weight: 600;
+     text-align: center;
+     line-height: 2.2rem;
 }
 
 .botao_enviar {
@@ -21,3 +23,8 @@
 .botao_enviar:hover {
      background-color: var(--cor_primaria_hover);
 }
+
+.conteudo {
+     gap: 3rem;
+}
+
