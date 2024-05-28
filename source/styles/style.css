@@ -1,11 +1,12 @@
 @charset "UTF-8";
 @import url(./reset.css);
+@import url(../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css);
 
 :root {
     --cor_primaria: #144fb3;
     --cor_secundaria: #e0f2fd;
 
-    --cor_primaria_hover: #3078f5;
+    --cor_primaria_hover: #286adb;
     --cor_secundaria_hover: #acd9f6;
 
     --fonte_principal: 'Roboto', sans-serif;
