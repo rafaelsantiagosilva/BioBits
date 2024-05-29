@@ -38,7 +38,7 @@ class RodapePrincipal extends HTMLElement {
                justify-content: center;
                gap: 2rem;
                padding: 2rem;
-               background-color: rgb(198, 198, 198);
+               background-color: rgb(155, 155, 155);
                color: #fff;
                font-size: 2rem;
                font-weight: 800;
