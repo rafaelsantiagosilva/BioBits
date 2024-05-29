@@ -6,7 +6,7 @@ const areasClicaveis = document.querySelectorAll('map > area');
 
 areasClicaveis.forEach((area) => {
     area?.addEventListener('click', () => {
-        let msg = area.classList[0] ? area.classList[0] : area.id;
+        let msg = area.classList[0] ?? area.id;
         alert(msg);
     });
 });
