@@ -54,50 +54,87 @@
                     <img
                         src="../../../public/images/organelas-celulares.png"
                         alt=""
+                        draggable="false"
                         usemap="#map_organela"
                     />
                     <map name="map_organela">
                         <area
                             id="organela1"
-                            shape="poly"
-                            coords="81,134, 96,116, 115,115, 220,200, 132,127, 222,158, 133,157, 98,168, 97,167, 92,164, 87,161, 82,156, 84,153"
+                            shape="circle"
+                            coords="109,142,27.5"
                         />
-
                         <area
-                            class="organela2"
+                            id="organela2"
+                            shape="poly"
+                            coords="80,134, 71,134, 71,160, 88,192, 98,197, 114,197, 114,198, 129,198, 133,191, 144,191, 155,180, 152,154, 146,144, 146,136, 140,135, 140,144, 122,163, 124,166, 121,167, 119,164, 99,167, 98,163, 93,165, 85,156"
+                        />
+                        <area
+                            class="organela3"
                             shape="rect"
                             coords="92,239, 150,266"
                         />
                         <area
-                            class="organela2"
+                            class="organela3"
                             shape="rect"
                             coords="274,162, 315,200"
                         />
                         <area
-                            class="organela2"
+                            class="organela3"
                             shape="rect"
                             coords="246,43, 279,66"
                         />
 
                         <area
-                            class="organela3"
+                            class="organela4"
                             shape="rect"
                             coords="158,60, 182,73"
                         />
                         <area
-                            class="organela3"
+                            class="organela4"
                             shape="rect"
                             coords="77,207, 102,222"
                         />
-                        <area class="organela3" shape="rect" coords="" />
-                        <area class="organela3" shape="rect" coords="" />
+                        <area
+                            class="organela4"
+                            shape="rect"
+                            coords="144,269, 162,286"
+                        />
+                        <area
+                            class="organela4"
+                            shape="rect"
+                            coords="247,172, 265,196"
+                        />
+                        <area
+                            class="organela5"
+                            shape="rect"
+                            coords="25,160, 52,208"
+                        />
+                        <area
+                            class="organela5"
+                            shape="rect"
+                            coords="162,173, 222,202"
+                        />
+                        <area
+                            class="organela5"
+                            shape="rect"
+                            coords="304,74, 333,126"
+                        />
+                        <area
+                            id="organela6"
+                            shape="rect"
+                            coords="163,211, 232,265"
+                        />
+                        <area
+                            id="organela7"
+                            shape="poly"
+                            coords="286,67, 298,85, 298,126, 186,149, 274,154, 250,168, 198,177, 161,148, 156,86, 220,57"
+                        />
                     </map>
                 </div>
             </div>
             <div class="botao_enviar" id="botao_enviar">Enviar resposta</div>
             <div class="aviso_resposta" id="aviso_resposta">
-                <span class="bi bi-check-circle"></span>
-                Você acertou completamente a pergunta! (1,0 ponto)
+                <span id="icone__aviso_resposta" class="bi"></span>
             </div>
         </main>
         <rodape-principal></rodape-principal>
