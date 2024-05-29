@@ -29,6 +29,10 @@
     gap: 2rem;
 }
 
+.invisivel {
+    display: none;
+}
+
 @media screen and (orientation: portrait) {
     .nao_portrait {
         display: none;

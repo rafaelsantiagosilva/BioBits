@@ -13,10 +13,6 @@ a {
     align-items: center;
 }
 
-.invisivel {
-    display: none;
-}
-
 ol#lista__ordem_organela > li,
 ol#lista__resposta > li {
     font-size: 1.3rem;
