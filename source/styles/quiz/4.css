@@ -9,7 +9,7 @@
 }
 
 ol#lista__ordem_organela > li {
-     font-size: 1.5rem;
+     font-size: 1.3rem;
      list-style: decimal;
      margin: 0.9rem;
      color: var(--cor_primaria);
