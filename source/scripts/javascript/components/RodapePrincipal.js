@@ -16,8 +16,11 @@ class RodapePrincipal extends HTMLElement {
         return rodape;
     }
     atomo() {
+        var _a;
         const imagemAtomo = document.createElement('img');
-        imagemAtomo.setAttribute('src', '../../../../public/favicon.ico');
+        const tipoDePagina = (_a = this.getAttribute('pagina')) !== null && _a !== void 0 ? _a : 'comum';
+        const caminho = '../../public/favicon.ico';
+        imagemAtomo.setAttribute('src', tipoDePagina == 'comum' ? caminho : '../' + caminho);
         imagemAtomo.setAttribute('alt', 'Um átomo com uma folha no lugar do núcleo');
         return imagemAtomo;
     }

@@ -20,7 +20,14 @@ class RodapePrincipal extends HTMLElement {
 
     private atomo() {
         const imagemAtomo = document.createElement('img');
-        imagemAtomo.setAttribute('src', '../../../../public/favicon.ico');
+
+        const tipoDePagina: string = this.getAttribute('pagina') ?? 'comum';
+
+        const caminho: string = '../../public/favicon.ico';
+        imagemAtomo.setAttribute(
+            'src',
+            tipoDePagina == 'comum' ? caminho : '../' + caminho
+        );
         imagemAtomo.setAttribute(
             'alt',
             'Um átomo com uma folha no lugar do núcleo'

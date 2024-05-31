@@ -14,7 +14,7 @@ class CabecalhoPrincipal extends HTMLElement {
         tituloLogo.innerText = 'Biobits';
         tituloLogo.setAttribute('class', 'titulo');
         const imagemLogo = document.createElement('img');
-        imagemLogo.setAttribute('src', '../../../../public/favicon.ico');
+        imagemLogo.setAttribute('src', '../../public/favicon.ico');
         imagemLogo.setAttribute('alt', 'Um átomo com uma folha no lugar do núcleo');
         const logo = document.createElement('div');
         logo.setAttribute('class', 'logo');
