@@ -21,13 +21,10 @@ areasClicaveis.forEach((area) => {
             ordemClicksUsuario.push(letraDaOrganela);
         else
             ordemClicksUsuario = ordemClicksUsuario.filter((letraOrganela) => letraOrganela != letraDaOrganela);
-        const itemExistente = encontraOrganelaNaLista(listaAreasClicadas, nomeDaOrganela);
-        if (itemExistente) {
-            listaAreasClicadas === null || listaAreasClicadas === void 0 ? void 0 : listaAreasClicadas.removeChild(itemExistente);
-        }
-        else {
+        const itemExistente = encontraOrganelaNaLista(listaAreasClicadas, letraDaOrganela);
+        if (!itemExistente) {
             const itemDaLista = document.createElement('li');
-            itemDaLista.innerText = nomeDaOrganela;
+            itemDaLista.innerText = letraDaOrganela;
             listaAreasClicadas === null || listaAreasClicadas === void 0 ? void 0 : listaAreasClicadas.appendChild(itemDaLista);
         }
     });
@@ -39,12 +36,14 @@ btnEnviar === null || btnEnviar === void 0 ? void 0 : btnEnviar.addEventListener
     const areaRespostaCorreta = document.getElementsByClassName('resposta_correta')[0];
     console.log(`Clicks: ${ordemClicksUsuario}\nCorreta: ${ordemCorreta}`);
     respostaCertas = contarRespostasCertas();
+    pontuacao = respostaCertas / ordemCorreta.length;
     verificarResultado();
     if (!respostaRevelada) {
         areaRespostaCorreta === null || areaRespostaCorreta === void 0 ? void 0 : areaRespostaCorreta.appendChild(gerarListaResposta());
         areaRespostaCorreta === null || areaRespostaCorreta === void 0 ? void 0 : areaRespostaCorreta.appendChild(gerarImagemResposta());
         respostaRevelada = true;
     }
+    btnEnviar.classList.add('invisivel');
 });
 function nomeOrganela(idOrganela) {
     let nome = '!ERRO!';
@@ -129,7 +128,7 @@ function gerarListaResposta() {
 function gerarImagemResposta() {
     const imagemResposta = document.createElement('img');
     imagemResposta.src =
-        '../../../../public/images/organelas-celulares-resposta.png';
+        '../../../public/images/organelas-celulares-resposta.png';
     imagemResposta.alt =
         'Uma célula eucarionte vegetal com suas organelas, com as respostas';
     return imagemResposta;
@@ -142,25 +141,26 @@ function contarRespostasCertas() {
     return n;
 }
 function vitoria() {
+    iconeResposta.classList.add('bi-check-circle');
     avisoResposta === null || avisoResposta === void 0 ? void 0 : avisoResposta.classList.add(CLASSES_RESPOSTA[0]);
     avisoResposta.innerHTML += `Parabéns! Você acertou! (${pontuacao.toFixed(2).replace('.', ',')})`;
-    iconeResposta.setAttribute('class', 'bi bi-check-circle');
 }
 function intermediario() {
+    iconeResposta.classList.add('bi-exclamation-triangle');
     avisoResposta === null || avisoResposta === void 0 ? void 0 : avisoResposta.classList.add(CLASSES_RESPOSTA[1]);
     avisoResposta.innerHTML += `Quase lá! Continue estudando! (${pontuacao.toFixed(2).replace('.', ',')})`;
-    iconeResposta.setAttribute('class', 'bi bi-exclamation-triangle');
 }
 function derrota() {
+    iconeResposta.classList.add('bi-x-circle');
     avisoResposta === null || avisoResposta === void 0 ? void 0 : avisoResposta.classList.add(CLASSES_RESPOSTA[2]);
     avisoResposta.innerHTML += `Errou! Melhor estudar mais! (${pontuacao.toFixed(2).replace('.', ',')})`;
-    iconeResposta.setAttribute('class', 'bi bi-x-circle');
 }
 function verificarResultado() {
     avisoResposta === null || avisoResposta === void 0 ? void 0 : avisoResposta.classList.remove('invisivel');
-    if (pontuacao >= 0.83)
+    iconeResposta === null || iconeResposta === void 0 ? void 0 : iconeResposta.classList.add('bi');
+    if (pontuacao >= 0.75)
         vitoria();
-    else if (pontuacao >= 0.4 && pontuacao < 0.83)
+    else if (pontuacao >= 0.5 && pontuacao < 0.75)
         intermediario();
     else
         derrota();

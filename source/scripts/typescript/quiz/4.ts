@@ -30,14 +30,12 @@ areasClicaveis.forEach((area) => {
 
         const itemExistente: HTMLElement | null = encontraOrganelaNaLista(
             listaAreasClicadas,
-            nomeDaOrganela
+            letraDaOrganela
         );
 
-        if (itemExistente) {
-            listaAreasClicadas?.removeChild(itemExistente);
-        } else {
+        if (!itemExistente) {
             const itemDaLista = document.createElement('li');
-            itemDaLista.innerText = nomeDaOrganela;
+            itemDaLista.innerText = letraDaOrganela;
             listaAreasClicadas?.appendChild(itemDaLista);
         }
     });
@@ -53,6 +51,7 @@ btnEnviar?.addEventListener('click', () => {
     console.log(`Clicks: ${ordemClicksUsuario}\nCorreta: ${ordemCorreta}`);
 
     respostaCertas = contarRespostasCertas();
+    pontuacao = respostaCertas / ordemCorreta.length;
 
     verificarResultado();
 
@@ -61,6 +60,8 @@ btnEnviar?.addEventListener('click', () => {
         areaRespostaCorreta?.appendChild(gerarImagemResposta());
         respostaRevelada = true;
     }
+
+    btnEnviar.classList.add('invisivel');
 });
 
 function nomeOrganela(idOrganela: string): string {
@@ -160,7 +161,7 @@ function gerarImagemResposta(): HTMLImageElement {
     const imagemResposta = document.createElement('img');
 
     imagemResposta.src =
-        '../../../../public/images/organelas-celulares-resposta.png';
+        '../../../public/images/organelas-celulares-resposta.png';
     imagemResposta.alt =
         'Uma célula eucarionte vegetal com suas organelas, com as respostas';
 
@@ -177,26 +178,27 @@ function contarRespostasCertas(): number {
 }
 
 function vitoria(): void {
+    iconeResposta.classList.add('bi-check-circle');
     avisoResposta?.classList.add(CLASSES_RESPOSTA[0]);
     avisoResposta.innerHTML += `Parabéns! Você acertou! (${pontuacao.toFixed(2).replace('.', ',')})`;
-    iconeResposta!.setAttribute('class', 'bi bi-check-circle');
 }
 
 function intermediario(): void {
+    iconeResposta.classList.add('bi-exclamation-triangle');
     avisoResposta?.classList.add(CLASSES_RESPOSTA[1]);
     avisoResposta.innerHTML += `Quase lá! Continue estudando! (${pontuacao.toFixed(2).replace('.', ',')})`;
-    iconeResposta!.setAttribute('class', 'bi bi-exclamation-triangle');
 }
 
 function derrota(): void {
+    iconeResposta.classList.add('bi-x-circle');
     avisoResposta?.classList.add(CLASSES_RESPOSTA[2]);
     avisoResposta.innerHTML += `Errou! Melhor estudar mais! (${pontuacao.toFixed(2).replace('.', ',')})`;
-    iconeResposta!.setAttribute('class', 'bi bi-x-circle');
 }
 
 function verificarResultado(): void {
     avisoResposta?.classList.remove('invisivel');
-    if (pontuacao >= 0.83) vitoria();
-    else if (pontuacao >= 0.4 && pontuacao < 0.83) intermediario();
+    iconeResposta?.classList.add('bi');
+    if (pontuacao >= 0.75) vitoria();
+    else if (pontuacao >= 0.5 && pontuacao < 0.75) intermediario();
     else derrota();
 }
