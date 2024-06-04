@@ -30,6 +30,12 @@ area {
     cursor: pointer;
 }
 
+#organela_atual {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--cor_primaria_hover);
+}
+
 @media screen and (orientation: portrait) {
     .organela {
         justify-content: center;

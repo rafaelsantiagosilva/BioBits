@@ -1,18 +1,10 @@
+const GA: GerenciadorDeAcertos = new GerenciadorDeAcertos();
 const btnEnviar = document.getElementById('botao_enviar');
-const avisoResposta = document.getElementById('aviso_resposta')!;
 const CLASSES_RESPOSTA: string[] = ['acertou', 'intermediario', 'errou'];
-
 const areasClicaveis = document.querySelectorAll('map > area');
-const listaAreasClicadas = document.getElementById('lista__ordem_organela');
-
 const ordemCorreta: string[] = ['A', 'H', 'D', 'G', 'C', 'E', 'B', 'F'];
 let ordemClicksUsuario: string[] = [];
-let respostaCertas: number = 0;
-let pontuacao: number = 0;
-
-const areaRespostaCorreta = document.getElementsByClassName('resposta')[0];
-const iconeResposta = document.getElementById('icone__aviso_resposta')!;
-let respostaRevelada: boolean = false;
+let numeroProximaOrganela: number = 1;
 
 areasClicaveis.forEach((area) => {
     area?.addEventListener('click', () => {
@@ -21,19 +13,20 @@ areasClicaveis.forEach((area) => {
         const nomeDaOrganela: string = nomeOrganela(identificacaoOrganela);
         const letraDaOrganela: string = letraOrganela(nomeDaOrganela);
 
-        if (ordemClicksUsuario.indexOf(letraDaOrganela) === -1)
+        if (ordemClicksUsuario.indexOf(letraDaOrganela) === -1) {
             ordemClicksUsuario.push(letraDaOrganela);
-        else
-            ordemClicksUsuario = ordemClicksUsuario.filter(
-                (letraOrganela) => letraOrganela != letraDaOrganela
+
+            const organelaAtual = document.getElementById('organela_atual')!;
+            organelaAtual.innerText = letraParaNomeDaOrganela(
+                ordemCorreta[numeroProximaOrganela]
             );
 
-        const itemExistente: HTMLElement | null = encontraOrganelaNaLista(
-            listaAreasClicadas,
-            letraDaOrganela
-        );
+            if (numeroProximaOrganela < ordemCorreta.length - 1)
+                numeroProximaOrganela++;
 
-        if (!itemExistente) {
+            const listaAreasClicadas = document.getElementById(
+                'lista__ordem_organela'
+            );
             const itemDaLista = document.createElement('li');
             itemDaLista.innerText = letraDaOrganela;
             listaAreasClicadas?.appendChild(itemDaLista);
@@ -42,24 +35,12 @@ areasClicaveis.forEach((area) => {
 });
 
 btnEnviar?.addEventListener('click', () => {
-    document
-        .getElementsByClassName('resposta')[0]
-        .classList.remove('invisivel');
-    const areaRespostaCorreta: HTMLElement | any =
-        document.getElementsByClassName('resposta_correta')[0];
+    let respostaCertas: number = contarRespostasCertas();
+    let pontuacao: number = respostaCertas / ordemCorreta.length;
 
-    console.log(`Clicks: ${ordemClicksUsuario}\nCorreta: ${ordemCorreta}`);
-
-    respostaCertas = contarRespostasCertas();
-    pontuacao = respostaCertas / ordemCorreta.length;
-
-    verificarResultado();
-
-    if (!respostaRevelada) {
-        areaRespostaCorreta?.appendChild(gerarListaResposta());
-        areaRespostaCorreta?.appendChild(gerarImagemResposta());
-        respostaRevelada = true;
-    }
+    GA.verificarResultado(pontuacao);
+    GA.areaRespostaCorreta?.appendChild(gerarListaResposta());
+    GA.areaRespostaCorreta?.appendChild(gerarImagemResposta());
 
     btnEnviar.classList.add('invisivel');
 });
@@ -130,18 +111,37 @@ function letraOrganela(nomeOrganela: string): string {
     return letra;
 }
 
-function encontraOrganelaNaLista(
-    lista: HTMLElement | null,
-    nomeOrganela: string
-): HTMLLIElement | null {
-    if (lista?.children.length) {
-        for (let i = 0; i < lista.children.length; i++) {
-            if (lista.children[i].innerHTML === nomeOrganela) {
-                return lista.children[i] as HTMLLIElement;
-            }
-        }
+function letraParaNomeDaOrganela(letra: string): string {
+    let nome: string = '!ERRO!';
+
+    switch (letra) {
+        case 'A':
+            nome = 'Núcleo';
+            break;
+        case 'B':
+            nome = 'Retículo Endoplasmático';
+            break;
+        case 'C':
+            nome = 'Cloroplasto';
+            break;
+        case 'D':
+            nome = 'Lisossomo';
+            break;
+        case 'E':
+            nome = 'Mitocôndria';
+            break;
+        case 'F':
+            nome = 'Complexo de Golgi';
+            break;
+        case 'G':
+            nome = 'Vacúolo';
+            break;
+        case 'H':
+            nome = 'Parede Celular';
+            break;
     }
-    return null;
+
+    return nome;
 }
 
 function gerarListaResposta(): HTMLElement {
@@ -175,30 +175,4 @@ function contarRespostasCertas(): number {
         if (ordemClicksUsuario[i] == ordemCorreta[i]) n++;
 
     return n;
-}
-
-function vitoria(): void {
-    iconeResposta.classList.add('bi-check-circle');
-    avisoResposta?.classList.add(CLASSES_RESPOSTA[0]);
-    avisoResposta.innerHTML += `Parabéns! Você acertou! (${pontuacao.toFixed(2).replace('.', ',')})`;
-}
-
-function intermediario(): void {
-    iconeResposta.classList.add('bi-exclamation-triangle');
-    avisoResposta?.classList.add(CLASSES_RESPOSTA[1]);
-    avisoResposta.innerHTML += `Quase lá! Continue estudando! (${pontuacao.toFixed(2).replace('.', ',')})`;
-}
-
-function derrota(): void {
-    iconeResposta.classList.add('bi-x-circle');
-    avisoResposta?.classList.add(CLASSES_RESPOSTA[2]);
-    avisoResposta.innerHTML += `Errou! Melhor estudar mais! (${pontuacao.toFixed(2).replace('.', ',')})`;
-}
-
-function verificarResultado(): void {
-    avisoResposta?.classList.remove('invisivel');
-    iconeResposta?.classList.add('bi');
-    if (pontuacao >= 0.75) vitoria();
-    else if (pontuacao >= 0.5 && pontuacao < 0.75) intermediario();
-    else derrota();
 }
