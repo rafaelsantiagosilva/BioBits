@@ -1,2 +1,18 @@
 @charset "UTF-8";
 @import url(../style.css);
+body{
+    margin: 0;
+    padding: auto;
+}
+
+.container{
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    height: auto;
+    width: auto;
+}
+
+.card{
+    
+}
