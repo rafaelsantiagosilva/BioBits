@@ -1,4 +1,14 @@
 const locais = document.querySelectorAll('#locais > figure');
+const ORDEM_CORRETA = ['planta', 'gazela', 'leao', 'bacterias'];
+
+document.getElementById('botao_enviar')?.addEventListener('click', () => {
+    let pontuacao = contarAcertos() / 4;
+    const GA = new GerenciadorDeAcertos();
+
+    GA.verificarResultado(pontuacao);
+    GA.areaRespostaCorreta.appendChild(gerarAreaResposta());
+    document.getElementById('botao_enviar')?.classList.add('invisivel');
+});
 
 document.addEventListener('dragstart', (e) => {
     (e.target as HTMLElement).classList.add('dragging');
@@ -45,4 +55,30 @@ function pegarNovaPosicao(local: HTMLElement, posY: number) {
     }
 
     return resultado;
+}
+
+function contarAcertos(): number {
+    let acertos = 0;
+
+    for (let i = 0; i < locais.length; i++) {
+        const item = locais[i].firstChild;
+        if ((item as HTMLElement).id == ORDEM_CORRETA[i]) acertos++;
+    }
+
+    return acertos;
+}
+
+function gerarAreaResposta(): HTMLElement {
+    const areaResposta = document.createElement('div');
+    areaResposta.setAttribute('class', 'imagens');
+
+    for (let i=0; i<ORDEM_CORRETA.length; i++) {
+        const item = document.createElement('figure');
+        const img = document.createElement('img');
+        img.src = "../../../public/images/cadeia-alimentar/" + ORDEM_CORRETA[i] + ".png";
+        item.appendChild(img);
+        areaResposta.appendChild(item);
+    }
+
+    return areaResposta;
 }

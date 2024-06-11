@@ -4,23 +4,24 @@ class GerenciadorDeAcertos {
         this.areaRespostaCorreta = document.getElementById('resposta_correta');
         this.iconeResposta = document.getElementById('icone__aviso_resposta');
         this.avisoResposta = document.getElementById('aviso_resposta');
+        this.CLASSES_RESPOSTA = ['acertou', 'intermediario', 'errou'];
     }
     vitoria(pontuacao) {
         var _a;
         this.iconeResposta.classList.add('bi-check-circle');
-        (_a = this.avisoResposta) === null || _a === void 0 ? void 0 : _a.classList.add(CLASSES_RESPOSTA[0]);
+        (_a = this.avisoResposta) === null || _a === void 0 ? void 0 : _a.classList.add(this.CLASSES_RESPOSTA[0]);
         this.avisoResposta.innerHTML += `Parabéns! Você acertou! (${pontuacao.toFixed(2).replace('.', ',')})`;
     }
     intermediario(pontuacao) {
         var _a;
         this.iconeResposta.classList.add('bi-exclamation-triangle');
-        (_a = this.avisoResposta) === null || _a === void 0 ? void 0 : _a.classList.add(CLASSES_RESPOSTA[1]);
+        (_a = this.avisoResposta) === null || _a === void 0 ? void 0 : _a.classList.add(this.CLASSES_RESPOSTA[1]);
         this.avisoResposta.innerHTML += `Quase lá! Continue estudando! (${pontuacao.toFixed(2).replace('.', ',')})`;
     }
     derrota(pontuacao) {
         var _a;
         this.iconeResposta.classList.add('bi-x-circle');
-        (_a = this.avisoResposta) === null || _a === void 0 ? void 0 : _a.classList.add(CLASSES_RESPOSTA[2]);
+        (_a = this.avisoResposta) === null || _a === void 0 ? void 0 : _a.classList.add(this.CLASSES_RESPOSTA[2]);
         this.avisoResposta.innerHTML += `Errou! Melhor estudar mais! (${pontuacao.toFixed(2).replace('.', ',')})`;
     }
     verificarResultado(pontuacao) {

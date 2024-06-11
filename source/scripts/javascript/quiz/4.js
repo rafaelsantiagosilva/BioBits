@@ -1,7 +1,6 @@
 "use strict";
+var _a;
 const GA = new GerenciadorDeAcertos();
-const btnEnviar = document.getElementById('botao_enviar');
-const CLASSES_RESPOSTA = ['acertou', 'intermediario', 'errou'];
 const areasClicaveis = document.querySelectorAll('map > area');
 const ordemCorreta = ['A', 'H', 'D', 'G', 'C', 'E', 'B', 'F'];
 let ordemClicksUsuario = [];
@@ -25,14 +24,14 @@ areasClicaveis.forEach((area) => {
         }
     });
 });
-btnEnviar === null || btnEnviar === void 0 ? void 0 : btnEnviar.addEventListener('click', () => {
-    var _a, _b;
+(_a = document.getElementById('botao_enviar')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
+    var _a, _b, _c;
     let respostaCertas = contarRespostasCertas();
     let pontuacao = respostaCertas / ordemCorreta.length;
     GA.verificarResultado(pontuacao);
     (_a = GA.areaRespostaCorreta) === null || _a === void 0 ? void 0 : _a.appendChild(gerarListaResposta());
     (_b = GA.areaRespostaCorreta) === null || _b === void 0 ? void 0 : _b.appendChild(gerarImagemResposta());
-    btnEnviar.classList.add('invisivel');
+    (_c = document.getElementById('botao_enviar')) === null || _c === void 0 ? void 0 : _c.classList.add('invisivel');
 });
 function nomeOrganela(idOrganela) {
     let nome = '!ERRO!';

@@ -1,6 +1,4 @@
 const GA: GerenciadorDeAcertos = new GerenciadorDeAcertos();
-const btnEnviar = document.getElementById('botao_enviar');
-const CLASSES_RESPOSTA: string[] = ['acertou', 'intermediario', 'errou'];
 const areasClicaveis = document.querySelectorAll('map > area');
 const ordemCorreta: string[] = ['A', 'H', 'D', 'G', 'C', 'E', 'B', 'F'];
 let ordemClicksUsuario: string[] = [];
@@ -34,7 +32,7 @@ areasClicaveis.forEach((area) => {
     });
 });
 
-btnEnviar?.addEventListener('click', () => {
+document.getElementById('botao_enviar')?.addEventListener('click', () => {
     let respostaCertas: number = contarRespostasCertas();
     let pontuacao: number = respostaCertas / ordemCorreta.length;
 
@@ -42,7 +40,7 @@ btnEnviar?.addEventListener('click', () => {
     GA.areaRespostaCorreta?.appendChild(gerarListaResposta());
     GA.areaRespostaCorreta?.appendChild(gerarImagemResposta());
 
-    btnEnviar.classList.add('invisivel');
+    document.getElementById('botao_enviar')?.classList.add('invisivel');
 });
 
 function nomeOrganela(idOrganela: string): string {
