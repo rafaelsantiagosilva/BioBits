@@ -9,3 +9,7 @@ Um quiz de biologia com 6 temas diferentes: Introdução a Biologia, Teorias de 
 -   Web: [https://www.flaticon.com/br/icones-gratis/internet](https://www.flaticon.com/br/icones-gratis/internet)
 -   Cérebro: [https://www.flaticon.com/br/icones-gratis/cerebro](https://www.flaticon.com/br/icones-gratis/cerebro)
 -   Organelas: [https://brasilescola.uol.com.br/biologia/o-citoplasma-das-celulas.htm](https://brasilescola.uol.com.br/biologia/o-citoplasma-das-celulas.htm)
+-   Planta: [https://www.flaticon.com/br/icone-gratis/plantar_1892751?term=planta&page=1&position=8&origin=search&related_id=1892751](https://www.flaticon.com/br/icone-gratis/plantar_1892751?term=planta&page=1&position=8&origin=search&related_id=1892751)
+-   Gazela: [https://www.flaticon.com/br/icone-gratis/bacterias_7690949?term=bact%C3%A9ria&page=1&position=12&origin=search&related_id=7690949](https://www.flaticon.com/br/icone-gratis/bacterias_7690949?term=bact%C3%A9ria&page=1&position=12&origin=search&related_id=7690949)
+-   Leão: [https://www.flaticon.com/br/icone-gratis/bacterias_7690949?term=bact%C3%A9ria&page=1&position=12&origin=search&related_id=7690949](https://www.flaticon.com/br/icone-gratis/bacterias_7690949?term=bact%C3%A9ria&page=1&position=12&origin=search&related_id=7690949)
+-   Bactérias: [https://www.flaticon.com/br/icone-gratis/bacterias_7690949?term=bact%C3%A9ria&page=1&position=12&origin=search&related_id=7690949](https://www.flaticon.com/br/icone-gratis/bacterias_7690949?term=bact%C3%A9ria&page=1&position=12&origin=search&related_id=7690949)
