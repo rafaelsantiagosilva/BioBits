@@ -25,10 +25,95 @@
             src="../../scripts/javascript/components/RodapePrincipal.js"
             defer
         ></script>
+        <script
+            type="text/javascript"
+            src="../../scripts/javascript/quiz/utils/GerenciadorDeAcertos.js"
+            defer
+        ></script>
+        <script
+            type="text/javascript"
+            src="../../scripts/javascript/quiz/2.js"
+            defer
+        ></script>
     </head>
     <body>
         <cabecalho-questao numeroquestao="2"></cabecalho-questao>
-        <main class="conteudo"></main>
+        <main class="conteudo">
+            <h1 class="enunciado">
+                Coloque as imagens abaixo em seus respectivos lugares:
+            </h1>
+            <div class="imagens" id="itens">
+                <figure>
+                    <img
+                        src="../../../public/images/cadeia-alimentar/bacterias.png"
+                        alt="Icone de bactérias"
+                        draggable="true"
+                        class="item"
+                        id="bacterias"
+                    />
+                    <figcaption>Bactérias</figcaption>
+                </figure>
+                <figure>
+                    <img
+                        src="../../../public/images/cadeia-alimentar/leao.png"
+                        alt="Icone de um leão"
+                        draggable="true"
+                        class="item"
+                        id="leao"
+                    />
+                    <figcaption>Leão</figcaption>
+                </figure>
+                <figure>
+                    <img
+                        src="../../../public/images/cadeia-alimentar/plantas.png"
+                        alt="Icone de uma planta"
+                        draggable="true"
+                        class="item"
+                        id="planta"
+                    />
+                    <figcaption>Planta</figcaption>
+                </figure>
+                <figure>
+                    <img
+                        src="../../../public/images/cadeia-alimentar/gazela.png"
+                        alt="Icone de uma gazela"
+                        draggable="true"
+                        class="item"
+                        id="gazela"
+                    />
+                    <figcaption>Gazela</figcaption>
+                </figure>
+            </div>
+            <div class="imagens" id="locais">
+                <figure>
+                    <figcaption>Produtores</figcaption>
+                </figure>
+                <figure>
+                    <figcaption>Consumidor Primário</figcaption>
+                </figure>
+                <figure>
+                    <figcaption>Consumidor Secundário</figcaption>
+                </figure>
+                <figure>
+                    <figcaption>Decompositor</figcaption>
+                </figure>
+            </div>
+            <a href="#resposta">
+                <button class="botao_enviar" id="botao_enviar">
+                    Enviar resposta
+                </button>
+            </a>
+            <div class="aviso_resposta invisivel" id="aviso_resposta">
+                <span id="icone__aviso_resposta"></span>
+            </div>
+            <div class="resposta invisivel" id="resposta">
+                <h1 class="enunciado">A resposta correta é</h1>
+                <div class="resposta_correta" id="resposta_correta"></div>
+            </div>
+            <a href="./5.html" class="invisivel" id="botao_proxima_questao"
+                ><button class="botao_enviar">Próxima questão</button></a
+            >
+        </main>
         <rodape-principal pagina="quiz"></rodape-principal>
     </body>
 </html>
