@@ -19,7 +19,7 @@ body {
 }
 
 .info {
-    text-align: justify;
+    text-align: center;
 }
 
 .usuario {
@@ -28,6 +28,13 @@ body {
     gap: 5px;
     text-align: center;
     flex-wrap: wrap;
+}
+
+#nomejogador {
+    border: 2px solid var(--cor_primaria);
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 @media screen and (orientation: portrait) {
