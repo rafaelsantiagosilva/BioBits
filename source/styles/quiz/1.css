@@ -12,3 +12,17 @@ body{
     height: auto;
     width: auto;
 }
+
+.pergunta > .enunciado{
+    text-align: justify;
+}
+
+.resposta{
+    font-size: 1.8rem;
+    text-align: center;
+    line-height: 2.2rem;
+}
+
+.resposta p{
+    margin: 5vh;
+}
