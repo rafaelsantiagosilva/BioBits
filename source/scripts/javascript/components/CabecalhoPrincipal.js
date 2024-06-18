@@ -24,40 +24,13 @@ class CabecalhoPrincipal extends HTMLElement {
         linkLogo.appendChild(logo);
         linkLogo.href = './home.html';
         // Criar os links de navegação
-        const linksNavbar = this.createLinks();
         const navbarNaoPortrait = document.createElement('nav');
-        navbarNaoPortrait.setAttribute('class', 'links nao_portrait');
-        navbarNaoPortrait.appendChild(linksNavbar.cloneNode(true));
         cabecalho.appendChild(linkLogo);
         cabecalho.appendChild(navbarNaoPortrait);
         const navbarPortrait = document.createElement('nav');
-        navbarPortrait.setAttribute('class', 'links portrait');
-        navbarPortrait.appendChild(linksNavbar.cloneNode(true));
         componenteRaiz.appendChild(cabecalho);
         componenteRaiz.appendChild(navbarPortrait);
         return componenteRaiz;
-    }
-    createLinks() {
-        const itemJogar = document.createElement('li');
-        const linkJogar = document.createElement('a');
-        linkJogar.innerText = 'Jogar';
-        linkJogar.href = './jogar.html';
-        itemJogar.appendChild(linkJogar);
-        const itemSobre = document.createElement('li');
-        const linkSobre = document.createElement('a');
-        linkSobre.innerText = 'Sobre';
-        linkSobre.href = './sobre.html';
-        itemSobre.appendChild(linkSobre);
-        const itemAutores = document.createElement('li');
-        const linkAutores = document.createElement('a');
-        linkAutores.innerText = 'Autores';
-        linkAutores.href = './autores.html';
-        itemAutores.appendChild(linkAutores);
-        const linksNavbar = document.createElement('ul');
-        linksNavbar.appendChild(itemJogar);
-        linksNavbar.appendChild(itemSobre);
-        linksNavbar.appendChild(itemAutores);
-        return linksNavbar;
     }
     styles() {
         const estilizacao = document.createElement('style');
@@ -96,28 +69,6 @@ class CabecalhoPrincipal extends HTMLElement {
                  letter-spacing: 2px;
              }
  
-             nav.links > ul {
-                 display: flex;
-                 justify-content: center;
-                 align-items: center;
-                 justify-content: space-between;
-                 gap: 12px;
-             }
- 
-             nav.links a {
-                 color: var(--cor_primaria);
-                 font-weight: 500;
-                 font-size: 1.2rem;
-                 text-decoration: none;
-                 cursor: pointer;
-                 transition: 200ms;
-             }
- 
-             nav.links a:hover {
-                 color: var(--cor_primaria_hover);
-                 text-decoration: underline;
-             }
- 
              .portrait {
                  display: none;
              }
@@ -127,7 +78,6 @@ class CabecalhoPrincipal extends HTMLElement {
                      flex-direction: column;
                      align-items: center;
                      text-align: center;
-                     box-shadow: none;
                  }
  
                  .header_principal > a > .logo {
@@ -144,17 +94,6 @@ class CabecalhoPrincipal extends HTMLElement {
  
                  .header_principal > a > .logo > img {
                      width: 3rem;
-                 }
- 
-                 .links {
-                     padding: 0.5rem 1rem;
-                     background-color: var(--cor_secundaria_hover);
-                     box-shadow: 0 3px 18px -1px rgba(0, 0, 0, 0.482);
-                     z-index: -1;
-                 }
- 
-                 nav.links a {
-                     font-size: 1.5rem;
                  }
  
                  .nao_portrait {
