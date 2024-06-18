@@ -13,7 +13,7 @@
             type="image/x-icon"
         />
         <link rel="stylesheet" href="../../styles/quiz/quiz.css" />
-        <link rel="stylesheet" href="../../styles/quiz/1_3_5_6.css" />
+        <link rel="stylesheet" href="../../styles/quiz/3.css" />
         <title>Questão 3</title>
         <script
             type="text/javascript"
@@ -28,7 +28,53 @@
     </head>
     <body>
         <cabecalho-questao numeroquestao="3"></cabecalho-questao>
-        <main class="conteudo"></main>
+        <main class="conteudo">
+            <h1 class="enunciado">Clique nas teorias correspondentes:</h1>
+            <div class="questao">
+                <div class="area_clicavel">
+                    <div class="imagem_teoria_da_vida" id="teoria_img">
+                        <img
+                            src="../../../public/images/teorias-de-origem-da-vida/criacionismo.png"
+                            alt="Uma mão segurando o mundo"
+                            draggable="false"
+                        />
+                    </div>
+                    <div class="lista_teorias_da_vida" id="teoria_lista">
+                        <ul>
+                            <li class="teoria">Panspermia</li>
+                            <li class="teoria">Biogenese</li>
+                            <li class="teoria">Criacionismo</li>
+                            <li class="teoria">Abiogenese</li>
+                            <li class="teoria">Evolução Química</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="teorias_clicadas" id="teorias_clicadas">
+                    <ol>
+                        <li>Panspermia</li>
+                        <li>Biogenese</li>
+                        <li>Criacionismo</li>
+                        <li>Abiogenese</li>
+                        <li>Evolução Química</li>
+                    </ol>
+                </div>
+            </div>
+            <a href="#resposta">
+                <button class="botao_enviar" id="botao_enviar">
+                    Enviar resposta
+                </button>
+            </a>
+            <div class="aviso_resposta invisivel" id="aviso_resposta">
+                <span id="icone__aviso_resposta"></span>
+            </div>
+            <div class="resposta invisivel" id="resposta">
+                <h1 class="enunciado">A resposta correta é</h1>
+                <div class="resposta_correta" id="resposta_correta"></div>
+            </div>
+            <a href="./5.html" class="invisivel" id="botao_proxima_questao"
+                ><button class="botao_enviar">Próxima questão</button></a
+            >
+        </main>
         <rodape-principal pagina="quiz"></rodape-principal>
     </body>
 </html>

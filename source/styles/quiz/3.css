@@ -1,0 +1,61 @@
+@charset "UTF-8";
+@import url(../style.css);
+
+.questao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.area_clicavel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.imagem_teoria_da_vida {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem_teoria_da_vida > img {
+    width: 50%;
+    border: 5px solid #808080;
+}
+
+.lista_teorias_da_vida {
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--cor_primaria);
+}
+
+li.teoria {
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+li.teoria:hover {
+    color: var(--cor_primaria_hover);
+}
+
+.teorias_clicadas {
+     margin-top: 2rem;
+     padding: 2rem;
+     border: 3px solid #000;
+     border-radius: 5px;
+     font-size: 1.3rem;
+}
+
+.teorias_clicadas > ol {
+     display: flex;
+     list-style: decimal;
+     gap: 2rem;
+     flex-wrap: wrap;
+
+}
