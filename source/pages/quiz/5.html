@@ -13,8 +13,13 @@
             type="image/x-icon"
         />
         <link rel="stylesheet" href="../../styles/quiz/quiz.css" />
-        <link rel="stylesheet" href="../../styles/quiz/1_3_5_6.css" />
+        <link rel="stylesheet" href="../../styles/quiz/1_5_6.css" />
         <title>Questão 5</title>
+        <script 
+            type="text/javascript"
+            src="../../scripts/javascript/quiz/1_5_6.js"
+            defer>
+        </script>
         <script
             type="text/javascript"
             src="../../scripts/javascript/components/CabecalhoQuestao.js"
@@ -28,7 +33,49 @@
     </head>
     <body>
         <cabecalho-questao numeroquestao="5"></cabecalho-questao>
-        <main class="conteudo"></main>
+        <main class="conteudo">
+                <div class="pergunta">
+                    <h1>
+                        Sabemos que o modelo mosaico fluído explica a membrana plasmática 
+                        das células em componentes, além de como ocorre o transporte através dela. 
+                        Então, em um churrasco, se alguém come diversos alimentos com grandes 
+                        quantidades de sal (NaCl), acaba sobrecarregando suas células com sódio, 
+                        ficando com uma quantidade maior dentro delas do que no ambiente em que 
+                        estão. Assim, o corpo age transportando solvente para essas células, do meio 
+                        para dentro. O processo descrito tem o nome de:
+                    </h1>
+                    <hr>
+                </div>
+                <div class="respostas">
+                    <p id="a" onclick="respostaEscolhida('a')">
+                        a)  Difusão simples
+                    </p>
+                    <p id="b" onclick="respostaEscolhida('b')">
+                        b)  Difusão facilitada
+                    </p>
+                    <p id="c" onclick="respostaEscolhida('c')">
+                        c)  Endocitose
+                    </p>
+                    <p id="d" onclick="respostaEscolhida('d')">
+                        d)  Osmose
+                    </p>
+                </div>
+            <a href="#resposta">
+                <button class="botao_enviar" id="botao_enviar">
+                    Enviar resposta
+                </button>
+            </a>
+            <div class="aviso_resposta invisivel" id="aviso_resposta">
+                <span id="icone__aviso_resposta"></span>
+            </div>
+            <div class="resposta invisivel" id="resposta">
+                <h1 class="enunciado">A resposta correta é</h1>
+                <div class="resposta_correta" id="resposta_correta"></div>
+            </div>
+            <a href="./6.html" class="invisivel" id="botao_proxima_questao"
+                ><button class="botao_enviar">Próxima questão</button></a
+            >
+        </main>
         <rodape-principal pagina="quiz"></rodape-principal>
     </body>
 </html>

@@ -13,8 +13,13 @@
             type="image/x-icon"
         />
         <link rel="stylesheet" href="../../styles/quiz/quiz.css" />
-        <link rel="stylesheet" href="../../styles/quiz/1_3_5_6.css" />
+        <link rel="stylesheet" href="../../styles/quiz/1_5_6.css" />
         <title>Questão 1</title>
+        <script 
+            type="text/javascript"
+            src="../../scripts/javascript/quiz/1_5_6.js"
+            defer>
+        </script>
         <script
             type="text/javascript"
             src="../../scripts/javascript/components/CabecalhoQuestao.js"
@@ -30,8 +35,8 @@
         <cabecalho-questao numeroquestao="1"></cabecalho-questao>
         <main class="conteudo">
             <div class="container">
-                <div class="enunciado" class="pergunta">
-                    <p>
+                <div class="pergunta">
+                    <h1>
                         Ao longo da história, a biologia foi explorada por diversos cientistas,
                         desde Aristóteles até Gregor Mendel, estudando a vida que nos cerca.
                         Porém, de forma matemática, segue leis imutáveis, havendo a <u>enorme
@@ -41,26 +46,42 @@
                         Os mais diferentes <u>organismos também interagem entre si (grupo ou
                         espécies distintas) e entre o ambiente</u>. Além de toda a <u>vida possuir a
                         bioquímica, estrutura de células e código genético.</u>
-                    </p>
+                    </h1>
                     <p>
                         <br>Acima, foram citadas, em ordem, os seguintes princípios da Biologia:
                     </p>
+                    <hr>
                 </div>
-                <div class="resposta">
-                    <p>
+                <div class="respostas">
+                    <p id="a" onclick="respostaEscolhida('a')">
                         a) Evolução, Ervilhas de Mendel, Equilíbrio Químico, Interação e Homeostase
                     </p>
-                    <p>
+                    <p id="b" onclick="respostaEscolhida('b')">
                         b) Diversidade, Evolução, Universalidade, Interação e Homeostase
                     </p>
-                    <p>
+                    <p id="c" onclick="respostaEscolhida('c')">
                         c) Diversidade, Evolução, Homeostase, Interação e Universalidade
                     </p>
-                    <p>
+                    <p id="d" onclick="respostaEscolhida('d')">
                         d) Diversidade, Evolução, Respiração Celular, Cadeia Alimentar e Universalidade
                     </p>
                 </div>
             </div>
+            <a href="#resposta">
+                <button class="botao_enviar" id="botao_enviar">
+                    Enviar resposta
+                </button>
+            </a>
+            <div class="aviso_resposta invisivel" id="aviso_resposta">
+                <span id="icone__aviso_resposta"></span>
+            </div>
+            <div class="resposta invisivel" id="resposta">
+                <h1 class="enunciado">A resposta correta é</h1>
+                <div class="resposta_correta" id="resposta_correta"></div>
+            </div>
+            <a href="./2.html" class="invisivel" id="botao_proxima_questao"
+                ><button class="botao_enviar">Próxima questão</button></a
+            >
         </main>
         <rodape-principal pagina="quiz"></rodape-principal>
     </body>
