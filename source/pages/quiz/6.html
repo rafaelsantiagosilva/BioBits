@@ -13,8 +13,13 @@
             type="image/x-icon"
         />
         <link rel="stylesheet" href="../../styles/quiz/quiz.css" />
-        <link rel="stylesheet" href="../../styles/quiz/1_3_5_6.css" />
+        <link rel="stylesheet" href="../../styles/quiz/1_5_6.css" />
         <title>Questão 6</title>
+        <script 
+            type="text/javascript"
+            src="../../scripts/javascript/quiz/1_5_6.js"
+            defer>
+        </script>
         <script
             type="text/javascript"
             src="../../scripts/javascript/components/CabecalhoQuestao.js"
@@ -28,7 +33,48 @@
     </head>
     <body>
         <cabecalho-questao numeroquestao="6"></cabecalho-questao>
-        <main class="conteudo"></main>
+        <main class="conteudo">
+            <div class="container">
+                <div class="pergunta">
+                    <h1>
+                        A célula é a menor unidade estrutural e funcional dos seres vivos. Ela é uma estrutura
+                        viva e, portanto, necessita de algumas substâncias para realizar suas atividades. Para
+                        controlar o que entra e o que sai dela, a célula conta com a membrana plasmática. Observe
+                        as alternativas abaixo e marque aquela que indica corretamente o nome dado à capacidade 
+                        da membrana de selecionar as substâncias que entram e saem da célula.
+                    </h1>
+                    <hr>
+                </div>
+                <div class="respostas">
+                    <p id="a" onclick="respostaEscolhida('a')">
+                        a) Difusão facilitada.
+                    </p>
+                    <p id="b" onclick="respostaEscolhida('b')">
+                        b) Regeneração.
+                    </p>
+                    <p id="c" onclick="respostaEscolhida('c')">
+                        c) Mosaico fluido.
+                    </p>
+                    <p id="d" onclick="respostaEscolhida('d')">
+                        d) Permeabilidade seletiva.
+                    </p>
+                </div>
+            </div>
+            <a href="#resposta">
+                <button class="botao_enviar" id="botao_enviar">
+                    Enviar resposta
+                </button>
+            </a>
+            <div class="aviso_resposta invisivel" id="aviso_resposta">
+                <span id="icone__aviso_resposta"></span>
+            </div>
+            <div class="resposta invisivel" id="resposta">
+                <h1 class="enunciado">A resposta correta é</h1>
+                <div class="resposta_correta" id="resposta_correta"></div>
+            </div>
+            <a href="" class="invisivel" id="botao_proxima_questao"
+                ><button class="botao_enviar">Ver Resultados</button></a
+            >
         <rodape-principal pagina="quiz"></rodape-principal>
     </body>
 </html>
