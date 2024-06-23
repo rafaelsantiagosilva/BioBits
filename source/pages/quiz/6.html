@@ -13,13 +13,13 @@
             type="image/x-icon"
         />
         <link rel="stylesheet" href="../../styles/quiz/quiz.css" />
-        <link rel="stylesheet" href="../../styles/quiz/1_5_6.css" />
+        <link rel="stylesheet" href="../../styles/quiz/multiplaEscolha.css" />
         <title>Questão 6</title>
-        <script 
+        <script
             type="text/javascript"
             src="../../scripts/javascript/quiz/1_5_6.js"
-            defer>
-        </script>
+            defer
+        ></script>
         <script
             type="text/javascript"
             src="../../scripts/javascript/components/CabecalhoQuestao.js"
@@ -37,28 +37,27 @@
             <div class="container">
                 <div class="pergunta">
                     <h1>
-                        A célula é a menor unidade estrutural e funcional dos seres vivos. Ela é uma estrutura
-                        viva e, portanto, necessita de algumas substâncias para realizar suas atividades. Para
-                        controlar o que entra e o que sai dela, a célula conta com a membrana plasmática. Observe
-                        as alternativas abaixo e marque aquela que indica corretamente o nome dado à capacidade 
-                        da membrana de selecionar as substâncias que entram e saem da célula.
+                        Nossas células possuem em sua composição química
+                        diversas substâncias orgânicas e inorgânicas, como a
+                        água, lipídios e vitaminas. Como uns dos mais
+                        importantes, os ______________ atuam com diversas
+                        funções, sendo a principal delas o fornecimento de
+                        energia para nosso corpo através da quebra e
+                        transformação deles nas mitocôndrias. Além disso, também
+                        formam a parede celular das células eucariotas vegetais.
+                        Eles se apresentam de 3 formas diferentes em nosso
+                        cotidiano: açúcares, amidos e fibras.
+
+                        <p><br />Qual substância é referida no texto?</p>
                     </h1>
-                    <hr>
+                    <hr />
                 </div>
-                <div class="respostas">
-                    <p id="a" onclick="respostaEscolhida('a')">
-                        a) Difusão facilitada.
-                    </p>
-                    <p id="b" onclick="respostaEscolhida('b')">
-                        b) Regeneração.
-                    </p>
-                    <p id="c" onclick="respostaEscolhida('c')">
-                        c) Mosaico fluido.
-                    </p>
-                    <p id="d" onclick="respostaEscolhida('d')">
-                        d) Permeabilidade seletiva.
-                    </p>
-                </div>
+                <ol class="respostas">
+                    <li id="a">Carboidratos</li>
+                    <li id="b">Lipídios</li>
+                    <li id="c">Ácidos nucléicos</li>
+                    <li id="d">Sais minerais</li>
+                </ol>
             </div>
             <a href="#resposta">
                 <button class="botao_enviar" id="botao_enviar">
@@ -72,9 +71,10 @@
                 <h1 class="enunciado">A resposta correta é</h1>
                 <div class="resposta_correta" id="resposta_correta"></div>
             </div>
-            <a href="./resultados.html" class="invisivel" id="botao_proxima_questao"
-                ><button class="botao_enviar">Ver Resultados</button></a
+            <a href="./6.html" class="invisivel" id="botao_proxima_questao"
+                ><button class="botao_enviar">Próxima questão</button></a
             >
+        </main>
         <rodape-principal pagina="quiz"></rodape-principal>
     </body>
 </html>

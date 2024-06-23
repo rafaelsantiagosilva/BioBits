@@ -1,22 +1,23 @@
 @charset "UTF-8";
 @import url(../style.css);
+
 body{
     margin: 0;
     padding: auto;
 }
 
 .container{
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
     height: auto;
     width: auto;
 }
 
 .pergunta{
     text-align: justify;
-    font-size: 1.9rem;
+    font-size: 1.6rem;
     font-weight: 200;
-    line-height: 2rem;
+    line-height: 2.3rem;
 }
 
 .pergunta p{
@@ -26,18 +27,26 @@ body{
 .respostas{
     font-size: 1.5rem;
     margin: 20px;
-    margin-bottom: -25px;
-    text-align: center;
     line-height: 2rem;
+    list-style: lower-alpha;
 }
 
-.respostas p{
+.respostas li{
     cursor: pointer;
-    transition: 1s;
+    transition: 300ms;
     margin: 5vh;
 }
 
-.respostas p:hover{
-    transform: scale(1.15);
+.respostas li:hover{
+    transform: scale(1.10);
 }
 
+.escolhida {
+    color: var(--cor_primaria);
+}
+
+@media screen and (orientation: portrait) {
+    .pergunta {
+        text-align: center;
+    }
+}

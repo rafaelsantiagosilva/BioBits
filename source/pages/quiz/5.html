@@ -13,13 +13,13 @@
             type="image/x-icon"
         />
         <link rel="stylesheet" href="../../styles/quiz/quiz.css" />
-        <link rel="stylesheet" href="../../styles/quiz/1_5_6.css" />
+        <link rel="stylesheet" href="../../styles/quiz/multiplaEscolha.css" />
         <title>Questão 5</title>
-        <script 
+        <script
             type="text/javascript"
             src="../../scripts/javascript/quiz/1_5_6.js"
-            defer>
-        </script>
+            defer
+        ></script>
         <script
             type="text/javascript"
             src="../../scripts/javascript/components/CabecalhoQuestao.js"
@@ -34,32 +34,32 @@
     <body>
         <cabecalho-questao numeroquestao="5"></cabecalho-questao>
         <main class="conteudo">
+            <div class="container">
                 <div class="pergunta">
                     <h1>
-                        Sabemos que o modelo mosaico fluído explica a membrana plasmática 
-                        das células em componentes, além de como ocorre o transporte através dela. 
-                        Então, em um churrasco, se alguém come diversos alimentos com grandes 
-                        quantidades de sal (NaCl), acaba sobrecarregando suas células com sódio, 
-                        ficando com uma quantidade maior dentro delas do que no ambiente em que 
-                        estão. Assim, o corpo age transportando solvente para essas células, do meio 
-                        para dentro. O processo descrito tem o nome de:
+                        Sabemos que o modelo mosaico fluído explica a membrana
+                        plasmática das células em componentes, além de como
+                        ocorre o transporte através dela. Então, em um
+                        churrasco, se alguém come diversos alimentos com grandes
+                        quantidades de sal (NaCl), acaba sobrecarregando suas
+                        células com sódio, ficando com uma quantidade maior
+                        dentro delas do que no ambiente em que estão. Assim, o
+                        corpo age transportando solvente para essas células, do
+                        meio para dentro.
+                        <p>
+                            <br />
+                            O processo descrito tem o nome de:
+                        </p>
                     </h1>
-                    <hr>
+                    <hr />
                 </div>
-                <div class="respostas">
-                    <p id="a" onclick="respostaEscolhida('a')">
-                        a)  Difusão simples
-                    </p>
-                    <p id="b" onclick="respostaEscolhida('b')">
-                        b)  Difusão facilitada
-                    </p>
-                    <p id="c" onclick="respostaEscolhida('c')">
-                        c)  Endocitose
-                    </p>
-                    <p id="d" onclick="respostaEscolhida('d')">
-                        d)  Osmose
-                    </p>
-                </div>
+                <ol class="respostas">
+                    <li id="a">a) Difusão simples</li>
+                    <li id="b">b) Difusão facilitada</li>
+                    <li id="c">c) Endocitose</li>
+                    <li id="d">d) Osmose</li>
+                </ol>
+            </div>
             <a href="#resposta">
                 <button class="botao_enviar" id="botao_enviar">
                     Enviar resposta
