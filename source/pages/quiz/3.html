@@ -25,6 +25,16 @@
             src="../../scripts/javascript/components/RodapePrincipal.js"
             defer
         ></script>
+        <script
+            type="text/javascript"
+            src="../../scripts/javascript/quiz/utils/GerenciadorDeAcertos.js"
+            defer
+        ></script>
+        <script
+            type="text/javascript"
+            src="../../scripts/javascript/quiz/3.js"
+            defer
+        ></script>
     </head>
     <body>
         <cabecalho-questao numeroquestao="3"></cabecalho-questao>
@@ -41,22 +51,20 @@
                     </div>
                     <div class="lista_teorias_da_vida" id="teoria_lista">
                         <ul>
-                            <li class="teoria">Panspermia</li>
-                            <li class="teoria">Biogenese</li>
-                            <li class="teoria">Criacionismo</li>
-                            <li class="teoria">Abiogenese</li>
-                            <li class="teoria">Evolução Química</li>
+                            <li class="teoria" id="panspermia">Panspermia</li>
+                            <li class="teoria" id="biogenese">Biogenese</li>
+                            <li class="teoria" id="criacionismo">
+                                Criacionismo
+                            </li>
+                            <li class="teoria" id="abiogenese">Abiogenese</li>
+                            <li class="teoria" id="quimica">
+                                Evolução Química
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <div class="teorias_clicadas" id="teorias_clicadas">
-                    <ol>
-                        <li>Panspermia</li>
-                        <li>Biogenese</li>
-                        <li>Criacionismo</li>
-                        <li>Abiogenese</li>
-                        <li>Evolução Química</li>
-                    </ol>
+                    <ol></ol>
                 </div>
             </div>
             <a href="#resposta">
@@ -71,7 +79,7 @@
                 <h1 class="enunciado">A resposta correta é</h1>
                 <div class="resposta_correta" id="resposta_correta"></div>
             </div>
-            <a href="./5.html" class="invisivel" id="botao_proxima_questao"
+            <a href="./4.html" class="invisivel" id="botao_proxima_questao"
                 ><button class="botao_enviar">Próxima questão</button></a
             >
         </main>
