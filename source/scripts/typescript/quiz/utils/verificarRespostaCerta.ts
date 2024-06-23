@@ -1,7 +1,8 @@
 function verificarRespostaCerta(
     respostaUsuario: string,
     respostaCorreta: string
-): boolean {
-    if (respostaUsuario == respostaCorreta) return true;
-    else return false;
+): void {
+    const GA = new GerenciadorDeAcertos();
+    if (respostaUsuario == respostaCorreta) GA.verificarResultado(1);
+    else GA.verificarResultado(0);
 }

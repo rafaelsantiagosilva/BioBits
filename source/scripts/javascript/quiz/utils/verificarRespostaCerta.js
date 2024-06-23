@@ -1,8 +1,9 @@
 "use strict";
 function verificarRespostaCerta(respostaUsuario, respostaCorreta) {
+    const GA = new GerenciadorDeAcertos();
     if (respostaUsuario == respostaCorreta)
-        return true;
+        GA.verificarResultado(1);
     else
-        return false;
+        GA.verificarResultado(0);
 }
 //# sourceMappingURL=verificarRespostaCerta.js.map
