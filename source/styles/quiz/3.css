@@ -24,7 +24,7 @@
 }
 
 .imagem_teoria_da_vida > img {
-    width: 50%;
+    max-width: 25rem;
     border: 5px solid #808080;
 }
 
@@ -50,12 +50,17 @@ li.teoria:hover {
      border: 3px solid #000;
      border-radius: 5px;
      font-size: 1.3rem;
+     width: fit-content;
 }
 
 .teorias_clicadas > ol {
      display: flex;
      list-style: decimal;
-     gap: 2rem;
+     gap: 3rem;
      flex-wrap: wrap;
+     line-height: 0.01rem;
+}
 
+.riscado {
+    text-decoration: line-through;
 }
