@@ -17,17 +17,22 @@
         <title>Questão 6</title>
         <script
             type="text/javascript"
-            src="../../scripts/javascript/quiz/1_5_6.js"
-            defer
-        ></script>
-        <script
-            type="text/javascript"
             src="../../scripts/javascript/components/CabecalhoQuestao.js"
             defer
         ></script>
         <script
             type="text/javascript"
             src="../../scripts/javascript/components/RodapePrincipal.js"
+            defer
+        ></script>
+        <script
+            type="text/javascript"
+            src="../../scripts/javascript/quiz/utils/GerenciadorDeAcertos.js"
+            defer
+        ></script>
+        <script
+            type="text/javascript"
+            src="../../scripts/javascript/quiz/multiplaEscolha.js"
             defer
         ></script>
     </head>
@@ -71,8 +76,11 @@
                 <h1 class="enunciado">A resposta correta é</h1>
                 <div class="resposta_correta" id="resposta_correta"></div>
             </div>
-            <a href="./6.html" class="invisivel" id="botao_proxima_questao"
-                ><button class="botao_enviar">Próxima questão</button></a
+            <a
+                href="./resultados.html"
+                class="invisivel"
+                id="botao_proxima_questao"
+                ><button class="botao_enviar">Ver resultados</button></a
             >
         </main>
         <rodape-principal pagina="quiz"></rodape-principal>
