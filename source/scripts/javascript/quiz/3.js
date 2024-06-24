@@ -39,16 +39,17 @@ let indiceImagemAtual = 0;
 });
 for (let i = 0; i < teorias.length; i++) {
     teorias[i].addEventListener('click', () => {
-        indiceImagemAtual += indiceImagemAtual < imagens.length - 1 ? 1 : 0;
-        clicksUsuario.push(teorias[i].id);
-        teorias[i].classList.add('riscado');
         let teoria = teorias[i].innerHTML;
         let itemDaLista = document.createElement('li');
         itemDaLista.innerText = teoria;
-        if (!hasChild(listaTeoriasClicadas, itemDaLista))
+        if (!hasChild(listaTeoriasClicadas, itemDaLista)) {
+            indiceImagemAtual += indiceImagemAtual < imagens.length - 1 ? 1 : 0;
+            imagemTeorias.setAttribute('src', imagens[indiceImagemAtual].src);
+            imagemTeorias.setAttribute('alt', imagens[indiceImagemAtual].alt);
             listaTeoriasClicadas.appendChild(itemDaLista);
-        imagemTeorias.setAttribute('src', imagens[indiceImagemAtual].src);
-        imagemTeorias.setAttribute('alt', imagens[indiceImagemAtual].alt);
+            clicksUsuario.push(teorias[i].id);
+            teorias[i].classList.add('riscado');
+        }
     });
 }
 function hasChild(lista, elemento) {
