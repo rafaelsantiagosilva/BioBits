@@ -11,10 +11,7 @@ class CabecalhoQuestao extends HTMLElement {
         cabecalho.setAttribute('class', 'header_questao');
         const titulo = document.createElement('div');
         let texto =
-            'Questão ' +
-            (this.getAttribute('numeroquestao')
-                ? this.getAttribute('numeroquestao')
-                : '0');
+            this.getAttribute('numeroquestao') ? `Questão ${this.getAttribute('numeroquestao')}` : 'Resultados';
         titulo.innerText = texto;
         titulo.setAttribute('class', 'titulo');
 

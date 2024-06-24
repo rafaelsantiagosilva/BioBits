@@ -33,6 +33,8 @@ let indiceImagemAtual = 0;
     const GA = new GerenciadorDeAcertos();
     GA.areaRespostaCorreta.appendChild(gerarRespostaCorreta());
     GA.verificarResultado(pontuacao);
+    const GD = new GerenciadorDeDados();
+    GD.aumentarPontos(pontuacao);
     (_a = document.getElementById('botao_enviar')) === null || _a === void 0 ? void 0 : _a.classList.add('invisivel');
 });
 for (let i = 0; i < teorias.length; i++) {

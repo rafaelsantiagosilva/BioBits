@@ -69,8 +69,11 @@ function converterLetraEmIndice(letra) {
 }
 function verificarResposta(respostaUsuario, respostaCorreta) {
     const GA = new GerenciadorDeAcertos();
-    if (respostaUsuario == respostaCorreta)
+    const GD = new GerenciadorDeDados();
+    if (respostaUsuario == respostaCorreta) {
         GA.verificarResultado(1);
+        GD.aumentarPontos(1);
+    }
     else
         GA.verificarResultado(0);
     const resposta = document.createElement('p');

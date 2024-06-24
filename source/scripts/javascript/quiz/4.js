@@ -28,6 +28,8 @@ areasClicaveis.forEach((area) => {
     var _a, _b, _c;
     let respostaCertas = contarRespostasCertas();
     let pontuacao = respostaCertas / ordemCorreta.length;
+    const GD = new GerenciadorDeDados();
+    GD.aumentarPontos(pontuacao);
     GA.verificarResultado(pontuacao);
     (_a = GA.areaRespostaCorreta) === null || _a === void 0 ? void 0 : _a.appendChild(gerarListaResposta());
     (_b = GA.areaRespostaCorreta) === null || _b === void 0 ? void 0 : _b.appendChild(gerarImagemResposta());

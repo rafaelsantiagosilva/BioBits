@@ -46,6 +46,10 @@ document.getElementById('botao_enviar')?.addEventListener('click', () => {
     const GA = new GerenciadorDeAcertos();
     GA.areaRespostaCorreta.appendChild(gerarRespostaCorreta());
     GA.verificarResultado(pontuacao);
+
+    const GD = new GerenciadorDeDados();
+    GD.aumentarPontos(pontuacao);
+
     document.getElementById('botao_enviar')?.classList.add('invisivel');
 });
 

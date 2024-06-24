@@ -79,8 +79,11 @@ function verificarResposta(
     respostaCorreta: string
 ): void {
     const GA = new GerenciadorDeAcertos();
-    if (respostaUsuario == respostaCorreta) GA.verificarResultado(1);
-    else GA.verificarResultado(0);
+    const GD = new GerenciadorDeDados();
+    if (respostaUsuario == respostaCorreta) {
+        GA.verificarResultado(1);
+        GD.aumentarPontos(1);
+    } else GA.verificarResultado(0);
 
     const resposta = document.createElement('p');
     resposta.innerText = `${respostaCorreta}) ${alternativas[converterLetraEmIndice(respostaCorreta)].innerHTML}`;

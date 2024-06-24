@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Um quiz para testar seus conhecimentos de biologia!"
+        />
+        <link
+            rel="shortcut icon"
+            href="../../../public/favicon.ico"
+            type="image/x-icon"
+        />
+        <link rel="stylesheet" href="../../styles/quiz/quiz.css" />
+        <link rel="stylesheet" href="../../styles/quiz/resultados.css" />
+        <title>Resultados</title>
+        <script
+            type="text/javascript"
+            src="../../scripts/javascript/components/CabecalhoQuestao.js"
+            defer
+        ></script>
+        <script
+            type="text/javascript"
+            src="../../scripts/javascript/components/RodapePrincipal.js"
+            defer
+        ></script>
+        <script
+            type="text/javascript"
+            src="../../scripts/javascript/quiz/utils/GerenciadorDeAcertos.js"
+            defer
+        ></script>
+        <script
+            type="text/javascript"
+            src="../../scripts/javascript/GerenciadorDeDados.js"
+            defer
+        ></script>
+        <script
+            type="text/javascript"
+            src="../../scripts/javascript/quiz/resultados.js"
+            defer
+        ></script>
+    </head>
+    <body>
+        <cabecalho-questao></cabecalho-questao>
+        <main class="conteudo">
+            <div id="mensagem_final">
+                <h1>Parabéns!</h1>
+                <p>
+                    Você tirou <span id="pontos">6,00</span> de 6,00 pontos!
+                    Muito obrigado por jogar
+                    <span id="nomeusuario">Anônimo</span>!
+                </p>
+                <div class="botoes">
+                    <button class="botao_enviar" id="botao_jogar_novamente">
+                        Jogar novamente
+                    </button>
+                    <button class="botao_enviar" id="botao_pagina_inicial">
+                        Página inicial
+                    </button>
+                </div>
+            </div>
+        </main>
+        <rodape-principal pagina="quiz"></rodape-principal>
+    </body>
+</html>

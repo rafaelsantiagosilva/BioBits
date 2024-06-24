@@ -36,6 +36,9 @@ document.getElementById('botao_enviar')?.addEventListener('click', () => {
     let respostaCertas: number = contarRespostasCertas();
     let pontuacao: number = respostaCertas / ordemCorreta.length;
 
+    const GD = new GerenciadorDeDados();
+    GD.aumentarPontos(pontuacao);
+
     GA.verificarResultado(pontuacao);
     GA.areaRespostaCorreta?.appendChild(gerarListaResposta());
     GA.areaRespostaCorreta?.appendChild(gerarImagemResposta());

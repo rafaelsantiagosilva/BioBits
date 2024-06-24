@@ -14,7 +14,7 @@
         />
         <title>Biobits</title>
         <link rel="stylesheet" href="../styles/home.css" />
-        <link rel="stylesheet" href="../styles/jogar.css">
+        <link rel="stylesheet" href="../styles/jogar.css" />
         <script
             type="text/javascript"
             src="../scripts/javascript/components/CabecalhoPrincipal.js"
@@ -23,6 +23,16 @@
         <script
             type="text/javascript"
             src="../scripts/javascript/components/RodapePrincipal.js"
+            defer
+        ></script>
+        <script
+            type="text/javascript"
+            src="../scripts/javascript/GerenciadorDeDados.js"
+            defer
+        ></script>
+        <script
+            type="text/javascript"
+            src="../scripts/javascript/jogar.js"
             defer
         ></script>
     </head>
@@ -89,14 +99,27 @@
                         iniciar clicando em jogar. Bom jogo!
                     </p>
                 </div>
-                <div class="usuario">
-                    <label for="nomejogador">Nome:</label>
-                    <input type="text" id="nomejogador" />
-                </div>
             </div>
-            <a href="../pages/quiz/1.html"
-                ><input class="botao_enviar" type="button" value="Jogar"
-            /></a>
+            <div class="form-control">
+                <input
+                    type="text"
+                    required=""
+                    placeholder="Digite seu nome..."
+                    id="nomejogador"
+                />
+                <label>
+                    <span style="transition-delay: 0ms">N</span
+                    ><span style="transition-delay: 50ms">o</span
+                    ><span style="transition-delay: 100ms">m</span
+                    ><span style="transition-delay: 150ms">e</span>
+                </label>
+            </div>
+            <input
+                class="botao_enviar"
+                id="botao_enviar"
+                type="button"
+                value="Jogar"
+            />
         </main>
         <rodape-principal></rodape-principal>
     </body>

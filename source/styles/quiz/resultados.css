@@ -1,0 +1,21 @@
+@charset "UTF-8";
+@import url(../style.css);
+
+#mensagem_final {
+     font-size: 2.5rem;
+     text-align: center;
+     padding: 2.5rem 1rem;
+     margin: 2rem;
+}
+
+#mensagem_final > h1 {
+     margin-bottom: 1.5rem;
+     font-size: 5rem;
+     font-weight: 900;
+     color: var(--cor_primaria);
+     text-shadow: 4px 3px 3px rgb(139, 158, 168);
+}
+
+.botoes {
+     margin-top: 1.5rem;
+}

@@ -6,6 +6,8 @@ const ORDEM_CORRETA = ['planta', 'gazela', 'leao', 'bacterias'];
     var _a;
     let pontuacao = contarAcertos() / 4;
     const GA = new GerenciadorDeAcertos();
+    const GD = new GerenciadorDeDados();
+    GD.aumentarPontos(pontuacao);
     GA.verificarResultado(pontuacao);
     GA.areaRespostaCorreta.appendChild(gerarAreaResposta());
     (_a = document.getElementById('botao_enviar')) === null || _a === void 0 ? void 0 : _a.classList.add('invisivel');
@@ -62,7 +64,10 @@ function gerarAreaResposta() {
     for (let i = 0; i < ORDEM_CORRETA.length; i++) {
         const item = document.createElement('figure');
         const img = document.createElement('img');
-        img.src = "../../../public/images/cadeia-alimentar/" + ORDEM_CORRETA[i] + ".png";
+        img.src =
+            '../../../public/images/cadeia-alimentar/' +
+                ORDEM_CORRETA[i] +
+                '.png';
         item.appendChild(img);
         areaResposta.appendChild(item);
     }
